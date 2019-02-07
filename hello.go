@@ -4,14 +4,15 @@ package main
 import "fmt"
 
 func main() {
-	// 创建 map
-	countryCapitalMap := map[string]string{"France": "Paris", "Italy": "Rome", "Japan": "Tokyo", "India": "New delhi"}
-	fmt.Println("原始地图")
-
-	for country := range countryCapitalMap {
-        fmt.Println(country, "首都是", countryCapitalMap [ country ])
+	var i int;
+	for i = 0; i < 10; i++ {
+		fmt.Printf("%d\t", fibonacci(i))
 	}
-	// 删除元素 delete
-	delete(countryCapitalMap, "France");
-	fmt.Println(countryCapitalMap)
+}
+
+func fibonacci(n int) int {
+	if n < 2 {
+		return n
+	}
+	return fibonacci(n-2) + fibonacci(n-1)
 }

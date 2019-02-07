@@ -154,3 +154,26 @@ var map_variable map[key_data_type] value_data_type
  map_variable := make(map[key_data_type]value_data_type)
 ```
 如果初始化 map， 那么就会创建一个 nil map。nil map 不能用来存放键值对
+
+## 递归
+ 递归就是在运行过程中调用自己
+* 递归阶乘
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var i int = 15
+    fmt.Printf("%d 的阶乘是 %d\n", i, Factorial(uint64(i)))
+}
+
+func Factorial(n uint64)(result uint64) {
+	if(n>0) {
+		result = n * Factorial(n - 1);
+		return result
+	}
+	return 1
+}
+```
+* 打印斐波那契数列
