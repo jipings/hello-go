@@ -140,3 +140,17 @@ s := arr[startIndex: endIndex]
 ## 语言范围(Range)
 go语言中 range 关键字用于 for 循环中迭代数组（array）、切片(slice)、通道(channel) 或者集合（map）的元素。在数组和切片中它返回元素的索引和索引对应的值，在集合返回 key-value 的key值
 
+## Go 语言集合 Map
+Map 是一种无序的键值对的集合。Map 最重要的一点是通过key来快速检索数据，key类似于索引，指向数据的值
+Map 是一种集合，所以我们可以向迭代数组和切片那样迭代它。不过，Map是无序的，我们无法决定它的返回顺序，这是因为`Map是使用hash`表来实现的。
+
+定义Map
+可以使用内建函数 make 也可以使用 map 关键字来定义 Map
+
+```go
+// 声明变量，默认 map 是 nil
+var map_variable map[key_data_type] value_data_type
+// 使用 make 函数
+ map_variable := make(map[key_data_type]value_data_type)
+```
+如果初始化 map， 那么就会创建一个 nil map。nil map 不能用来存放键值对
