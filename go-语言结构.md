@@ -134,5 +134,9 @@ s := arr[startIndex: endIndex]
 
 可以通过设置下限及上限来设置截取切片 [lower-bound:upper-bound]
 
+* append() 和 copy() 函数
+如果想增加切片容量，我们必须创建一个新的更大的切片并把原切片的内容都拷贝过来
+
+
 
 
