@@ -3,26 +3,30 @@ package main
 
 import "fmt"
 
-type Books struct {
-	title string
-	author string
-	subject string
-	book_id int
-};
-
 func main()  {
-	// 创建一个新的结构体, 可以使用key => value形式 忽略的字段为 0 或 空
-	var Books1 Books
-	Books1 = Books{"go", "haha", "go haha",123 };
-	// Books2 = Books{ title: "go", author: "auth", book_id: 212 }
-	// Books3 = Books{title: "Go 语言", author: "www.runoob.com"};
+	// 创建切片
+	numbers := []int{0,1,2,3,4,5,6,7,8}
+	printSlice(numbers);
+	// 打印原始切片
+	fmt.Println("numbers ==", numbers);
+	// 打印子切片从索引1（包含）到索引4（不包含）
+	fmt.Println("numbers[1:4] ==", numbers[1:4])
+	// 默认下限为 0
+	fmt.Println("numbers[:3] ==", numbers[:3]);
+	// 默认上限为 len(s) 
+	fmt.Println("numbers[4:] ==", numbers[4:]);
 
-	printBook(Books1)
+	numbers1 := make([]int,0,5);
+	printSlice(numbers1);
+	
+	// 打印子切片从索引0到索引2
+	numbers2 := numbers[:2]
+	printSlice(numbers2)
+	// 打印子切片从索引 2到索引5（不包含）
+	numbers3 := numbers[2:5]
+	printSlice(numbers3)
 }
 
-func printBook(book Books) {
-	fmt.Printf( "Book title : %s\n", book.title);
-   fmt.Printf( "Book author : %s\n", book.author);
-   fmt.Printf( "Book subject : %s\n", book.subject);
-   fmt.Printf( "Book book_id : %d\n", book.book_id);
-}
+func printSlice(x []int){
+	fmt.Printf("len=%d cap=%d slice=%v\n",len(x),cap(x),x)
+ }

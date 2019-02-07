@@ -99,3 +99,40 @@ type struct_variable_type struct {
     ...
 }
 ```
+
+## go 语言切片( Slice )
+
+go语言的切片是数组的抽象
+go 数组的长度不可改变，在特定场景中这样的集合就不太适用，go 中提供了一种灵活，功能强悍的内置类型切片（”动态数组“），与数组相比切片的长度
+是不固定的，可以追加元素，在追加时可能使切片的容量增大
+
+* 定义切片
+```go
+var identifier []type
+```
+切片不需要说明长度
+或适用make() 函数来创建切片：
+```go
+var slice1 []type = make([]type, len)
+// 简写
+slice2 := make([]type, len)
+// 也可以指定容量，其中capacity为可选参数
+make([]type, len ,capacity);
+
+// 切片初始化
+s := [] int {1,2,3}
+s := arr[startIndex: endIndex]
+
+```
+* len() 和 cap() 函数
+切片是可索引的，并且可以由 len() 方法获取长度
+切片提供了计算容量的方法cap() 可以测量切片最长可以达到多少
+
+* 空(nil)切片
+
+* 切片截取
+
+可以通过设置下限及上限来设置截取切片 [lower-bound:upper-bound]
+
+
+
