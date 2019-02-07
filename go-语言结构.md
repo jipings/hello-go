@@ -85,3 +85,17 @@ var fp *float32 // 指向浮点型
 * 空指针
 当一个指针被定义后没有分配到任何变量时，它的值为 `nil`
 nil在概念上和其他语言的 null,none,nil一样
+
+## go 语言结构体
+go 语言中数组可以存储同一类型的数据，但在结构体中我们可以为不同项定义不同的数据类型。
+结构体是由一系列具有相同类型或不同类型的数据构成的数据集合
+
+* 定义结构体
+定义结构体需要使用type 和 struct 语句。 struct 语句定义一个新的数据类型，结构体有中有一个或多个成员。type语句设定了结构体的名称。
+```go
+type struct_variable_type struct {
+    member definition
+    member definition
+    ...
+}
+```
