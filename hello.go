@@ -4,25 +4,28 @@ package main
 import "fmt"
 
 func main()  {
-	var numbers []int
-	printSlice(numbers)
+	// 这是我们使用range去求一个slice的和。使用数组跟这个很类似
+	nums := []int{1,2,3,4}
+	sum := 0;
 
-	// 允许追加空切片
-	numbers = append(numbers, 0);
-	printSlice(numbers);
-	// 向切片添加一个元素
-	numbers = append(numbers,1)
-	printSlice(numbers);
-	// 同时添加多个元素
-	numbers = append(numbers, 2,3,4)
-	printSlice(numbers);
-	// 创建切片 number1 是之前切片的两倍容量
-	numbers1 := make([]int, len(numbers), (cap(numbers))*2)
-	// 拷贝 numbers 的内容到 numbers1
-	copy(numbers1, numbers);
-	printSlice(numbers1)
+	for _, num := range nums {
+		sum += num
+	}
+	fmt.Println("sum:", sum);
+	// 在数组上使用range将传入index和值两个变量。上面那个例子我们不需要使用该元素的序号，所以我们使用空白符"_"省略了。有时侯我们确实需要知道它的索引。
+	for i, num := range nums {
+		if num == 3 {
+			fmt.Println("index:", i)
+		}
+	}
+	// range 也可以在map的键值对上
+	kvs := map[string]string {"a":"apple","b":"banana"}
+	for k, v := range kvs {
+		fmt.Printf("%s->%s\n",k,v)
+	}
+	// range 也可以用来枚举Unicode 字符串，第一个参数是索引，第二个是字符（Unicode的值）本身
+	for i,c := range "go" {
+		fmt.Println(i,c)
+	}
+
 }
-
-func printSlice(x []int){
-	fmt.Printf("len=%d cap=%d slice=%v\n",len(x),cap(x),x)
- }

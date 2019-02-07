@@ -137,6 +137,6 @@ s := arr[startIndex: endIndex]
 * append() 和 copy() 函数
 如果想增加切片容量，我们必须创建一个新的更大的切片并把原切片的内容都拷贝过来
 
-
-
+## 语言范围(Range)
+go语言中 range 关键字用于 for 循环中迭代数组（array）、切片(slice)、通道(channel) 或者集合（map）的元素。在数组和切片中它返回元素的索引和索引对应的值，在集合返回 key-value 的key值
 
