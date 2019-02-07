@@ -3,16 +3,25 @@ package main
 
 import "fmt"
 
-func main() {
-	var i int;
-	for i = 0; i < 10; i++ {
-		fmt.Printf("%d\t", fibonacci(i))
-	}
+type Phone interface {
+	call()
 }
+type NokiaPhone struct {
 
-func fibonacci(n int) int {
-	if n < 2 {
-		return n
-	}
-	return fibonacci(n-2) + fibonacci(n-1)
+}
+func (nokiaPhone NokiaPhone) call() {
+    fmt.Println("I am Nokia, I can call you!")
+}
+type Iphone struct {
+
+}
+func (iPhone Iphone) call() {
+	fmt.Println("I am iPhone, I can call you!")
+}
+func main()  {
+	var phone Phone
+	phone = new(NokiaPhone)
+	phone.call()
+	phone = new(Iphone)
+	phone.call()
 }

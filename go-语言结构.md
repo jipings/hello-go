@@ -177,3 +177,42 @@ func Factorial(n uint64)(result uint64) {
 }
 ```
 * 打印斐波那契数列
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var i int;
+	for i = 0; i < 10; i++ {
+		fmt.Printf("%d\t", fibonacci(i))
+	}
+}
+
+func fibonacci(n int) int {
+	if n < 2 {
+		return n
+	}
+	return fibonacci(n-2) + fibonacci(n-1)
+}
+```
+## go 语言接口
+go 语言提供了另外一种数据类型及接口，它把所有的具有共性的方法定义在一起，任何其他类型只要实现了这些方法就是实现了这个接口
+
+```go
+// 定义接口
+type interface_name interface {
+    method_name1 [return_type]
+    method_name2 [return_type]
+    ...
+    method_namen [return_type]
+}
+// 定义结构体
+type struct_name struct {
+    // variables
+}
+// 实现接口方法
+func (struct_name_variable struct_name) method_name1() [return_type]{
+    // 方法实现
+}
+```
