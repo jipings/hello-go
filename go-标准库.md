@@ -12,3 +12,7 @@
 ## os
 
 ## bufio
+
+## io
+
+## strings

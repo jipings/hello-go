@@ -18,6 +18,7 @@ func main()  {
 			fmt.Fprintf(os.Stderr, "dup3: %v\n", err)
 			continue
 		}
+		fmt.Println(strings.Split(string(data), "\n"))
 		for _, line := range strings.Split(string(data), "\n") {
 			counts[line]++
 		}
@@ -28,3 +29,5 @@ func main()  {
 		}
 	}
 }
+
+// go run 1.3.go ./data.text 
