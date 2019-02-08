@@ -216,3 +216,51 @@ func (struct_name_variable struct_name) method_name1() [return_type]{
     // 方法实现
 }
 ```
+实例
+```go
+package main
+
+import "fmt"
+
+type Phone interface {
+	call()
+}
+type NokiaPhone struct {
+
+}
+func (nokiaPhone NokiaPhone) call() {
+    fmt.Println("I am Nokia, I can call you!")
+}
+type Iphone struct {
+
+}
+func (iPhone Iphone) call() {
+	fmt.Println("I am iPhone, I can call you!")
+}
+func main()  {
+	var phone Phone
+	phone = new(NokiaPhone)
+	phone.call()
+	phone = new(Iphone)
+	phone.call()
+}
+```
+在上面的例子中，我们定义了一个接口 Phone，折扣里面有一个call()。然后我们在main函数里面定义了一个Phone类型变量，并分别为之赋值为NokiaPhone和IPhone
+
+## 错误处理
+go 语言通过内置的错误接口提供了非常简单的错误处理机制
+error 类型是一个接口类型，这是它的定义
+```go
+type error interface {
+    Error() string
+}
+```
+我们可以在编码中通过实现 error 接口类型来生成错误信息。
+函数通常在最后的返回值中返回错误信息。使用errors.New 可返回一个错误信息：
+```go
+func Sqrt(f float64) (float64,error) {
+    if f < 0 {
+        return 0, errors.New("math: square root of negative number")
+    }
+} 
+```
