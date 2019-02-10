@@ -40,3 +40,16 @@ func mandelbrot(z complex128) color.Color {
 	}
 	return color.Black
 }
+
+/*
+练习
+3.5
+用 image.NewRGBA 函数和 color.RGBA 类型或 color.YCbCr 类型实现一个 Mandelbrot 
+集的全彩图
+3.6
+超采样 (supersampling) 通过对几个临近像素颜色值取样并取均值，是一种减少锯齿化的方法。
+最简单的做法是将每个像素分成4个”子像素“。给出实现方式
+3.7
+3.8
+3.9
+*/
