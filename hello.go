@@ -3,20 +3,17 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
+type address struct {
+	hostname string
+	port int
+}
 
 func main()  {
-	var names []string
-	var ages = map[string]int{
-		"charlie": 34,
-		"alice":   31,
-	}
-	for name := range ages {
-		names = append(names, name)
-	}
-	sort.Strings(names)
-	for _, name := range names {
-		fmt.Printf("%s\t%d\n", name, ages[name])
+	hits := make(map[address]int)
+	hits[address{"golang.org",443}]++
+	fmt.Println(hits)
+	for k, v := range hits {
+		fmt.Println(k,v)
 	}
 }
