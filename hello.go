@@ -4,16 +4,20 @@ package main
 import (
 	"fmt"
 )
-type address struct {
-	hostname string
-	port int
+
+func f() func(int) int {
+	i := 0
+    return func(r int) int {
+		s := i+r
+		return s
+	}
 }
 
 func main()  {
-	hits := make(map[address]int)
-	hits[address{"golang.org",443}]++
-	fmt.Println(hits)
-	for k, v := range hits {
-		fmt.Println(k,v)
-	}
+	s := f()
+	defer fmt.Println(s(1))
+	defer fmt.Println(s(2))
+	defer fmt.Println(s(3))
+	fmt.Println(s(5))
+	
 }
