@@ -71,4 +71,9 @@ func init() {
 	
 	p.ScaleBy(2)
 	fmt.Println(*p.Point, *q.Point)
+	// 选择子 p.Distance 可以赋予一个方法变量，它是一个函数，把方法(Point.Distance)
+	// 绑定到一个接收者 p 上。函数只需要提供实参而不需要提供接收者就能够调用。
+	distanceFromP := p.Distance
+	var origin Point
+	fmt.Println(distanceFromP(origin))
 }
