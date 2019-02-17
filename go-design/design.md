@@ -82,3 +82,14 @@ ch = make(chan int , 3) // 容量为 3 的缓冲通道
 ## 11 20
 ## 12 20
 ## 13 10
+
+
+## slice
+
+* slice 创建
+```go
+var s []int // nil
+s1 := []int{1,2,3,4}
+s2 := make([]int, 16, 32)
+
+```
