@@ -48,7 +48,7 @@ func handleCom(conn net.Conn) {
 	}
 
 	leaving <- ch
-	messages <- who + " has left"
+	messages <- who + " has leave"
 	conn.Close()
 }
 
