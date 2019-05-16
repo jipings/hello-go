@@ -146,3 +146,5 @@ Subroutines are special cases of more general program components, called corouti
 
 * Don't communicate by sharing memory; share memory by communicating.
 * 不要通过共享内存来通信；通过通信来共享内存
+
+* sync.WaitGroup
