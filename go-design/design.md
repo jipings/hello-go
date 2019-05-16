@@ -99,3 +99,50 @@ OS 线程会被操作系统内核调度。每几毫秒，一个硬件计时器�
 
 反射是由 reflect 包提供的。它定义了两个重要的类型，Type 和 value. 一个Type 表示一个GO类型，它是一个接口，有许多方法来区分类型以及检查他们的组成部分，例如
 一个结构体的成员或一个函数的参数等。唯一能反映 reflect.Type 实现的接口的类型描述信息,也正是这个实体标识了接口值得动态类型
+
+## Goroutines
+每一个并发的执行单元叫作一个 goroutine。设想这里的一个程序有两个函数，一个函数做计算，另一个输出结果，假设两个函数没有相互之间的调用关系。一个线性的程序会先调用其中的一个函数，然后再调用另一个。如果程序中包含多个goroutine，对两个函数的调用则可能发生在同一时刻。
+
+## 表格驱动测试
+
+* 分离的测试数据和测试逻辑
+* 明确的出错信息
+* 可以部分失败
+* go 语言的语法使得我们更易实践表格驱动测试
+
+## 协程 Coroutine
+
+* 轻量级 “线程”
+* `非抢占式`多任务处理，由协程主动交出控制权
+* 编译器/解析器/虚拟机层面的多任务
+* 多个协程可能在一个或多个线程上运行
+
+* Coroutines
+Subroutines are special cases of more general program components, called coroutines. In constrast to the unsymmetric
+
+-   子程序是协程的一个特例
+
+## goroutine 的定义
+
+* 任何函数只需加上 go 就能送给调度器运行
+* 不需要在定义时区是否是异步函数
+* 调度器在合适的点进行切换
+* 使用 -race 来检测数据访问冲突
+
+## goroutine 可能的切换点
+
+* I/O, select
+* channel
+* 等待锁
+* 函数调用(有时)
+* runtime.Gosched()
+
+## channel 
+
+* channel 
+* buffered channel
+* range 
+* 理论基础: Communication Sequential Process(CSP)
+
+* Don't communicate by sharing memory; share memory by communicating.
+* 不要通过共享内存来通信；通过通信来共享内存
