@@ -148,3 +148,9 @@ Subroutines are special cases of more general program components, called corouti
 * 不要通过共享内存来通信；通过通信来共享内存
 
 * sync.WaitGroup
+
+## 传统的同步机制
+
+* WaitGroup
+* Mutex
+* Cond
