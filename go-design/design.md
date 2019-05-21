@@ -154,3 +154,19 @@ Subroutines are special cases of more general program components, called corouti
 * WaitGroup
 * Mutex
 * Cond
+
+## http 服务器的性能分析
+
+* import _ "net/http/pprof"
+* 访问 /debug/pprof/
+* 使用 go tool pprof 分析性能
+
+* go tool pprof http://localhost:8888/debug/pprof/profile
+
+## 其他标准库
+
+* bufio
+* log
+* encoding/json
+* regexp
+* time
