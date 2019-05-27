@@ -177,3 +177,19 @@ Subroutines are special cases of more general program components, called corouti
 * 爬虫基础
 * 应用广泛，综合性强
 * fmt.Fscanf
+
+## 分布式网络爬虫
+
+* 有一定的复杂性
+* 可以灵活调整项目的复杂性
+* 平衡语言/爬虫之间的比重
+
+## go 语言的爬虫库/框架
+
+* henrylee2cn/pholcus
+* gocrawl
+* colly
+* hu17889/go_spider
+
+* 使用 ElasticSearch 作为数据存储
+* 使用 go 语言标准模板库实现 http 的数据展示
